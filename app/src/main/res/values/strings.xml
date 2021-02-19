@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Remindr</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Login</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="register">Register</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login_large_icon">login_large_icon</string>
+    <string name="register_large_icon">register_large_icon</string>
+    <string name="don_t_have_an_account">Do not have an account yet?</string>
+</resources>

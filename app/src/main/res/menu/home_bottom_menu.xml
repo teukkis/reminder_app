@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:title="logout"
+        android:icon="@drawable/ic_baseline_logout_24"
+        android:id="@+id/logout"/>
+
+    <item
+        android:title="profile"
+        android:icon="@drawable/ic_baseline_person_24"
+        android:id="@+id/profile"/>
+
+    <item
+        android:title="smthngCool"
+        android:icon="@drawable/ic_emoji_people"
+        android:id="@+id/cool">
+
+    </item>
+
+
+</menu>

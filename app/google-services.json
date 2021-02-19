@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "510169819644",
+    "project_id": "remindme-d8a8e",
+    "storage_bucket": "remindme-d8a8e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:510169819644:android:057b23c53627b3db57aa79",
+        "android_client_info": {
+          "package_name": "com.example.remindr"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "510169819644-mtp88ciug4d5dom9ah6u207e6ou8j56v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.remindr",
+            "certificate_hash": "deb119b4a404639cd1f424d552da90af3a48ac75"
+          }
+        },
+        {
+          "client_id": "510169819644-569qet7ib1c6a2mul745hou2vb6tsnfc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDnDTsPWD-uuGAjdA9irfET4ZUbghr8xFw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "510169819644-569qet7ib1c6a2mul745hou2vb6tsnfc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
