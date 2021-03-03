@@ -7,9 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.remindr.database.ReminderViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationItemView
 import kotlinx.android.synthetic.main.fragment_home.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -19,10 +22,10 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     private lateinit var reminderAdapter: ReminderRecyclerAdapter
     private lateinit var navController: NavController
+    private lateinit var reminderViewModel: ReminderViewModel
 
     private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(context, R.anim.rotate_open) }
     private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(context, R.anim.rotate_close) }
-    private var clicked = false
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,8 +51,12 @@ class HomeFragment : Fragment(), View.OnClickListener {
             adapter = reminderAdapter
         }
 
-        val data = DataSource.createDataSet()
-        reminderAdapter.submitList(data)
+        reminderViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
+        reminderViewModel.allReminders.observe(viewLifecycleOwner, Observer { reminder ->
+            reminderAdapter.submitList(reminder)
+
+        })
+
     }
 
     override fun onClick(v: View?) {
@@ -63,10 +70,4 @@ class HomeFragment : Fragment(), View.OnClickListener {
             }
         }
     }
-
-    private fun onAddButtonClicked() {
-
-    }
-
-
 }

@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_homeFragment_to_fullReminderFragment"
             app:destination="@id/fullReminderFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_editReminderFragment"
+            app:destination="@id/editReminderFragment" />
     </fragment>
 
     <fragment
@@ -73,9 +76,63 @@
         android:id="@+id/fullReminderFragment"
         android:name="com.example.remindr.FullReminderFragment"
         android:label="fragment_full_reminder"
-        tools:layout="@layout/fragment_full_reminder" >
+        tools:layout="@layout/fragment_new_reminder" >
         <action
             android:id="@+id/action_fullReminderFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_fullReminderFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <argument
+            android:name="location_x"
+            app:argType="string" />
+        <argument
+            android:name="location_y"
+            app:argType="string" />
+        <argument
+            android:name="latlng"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/editReminderFragment"
+        android:name="com.example.remindr.EditReminderFragment"
+        android:label="fragment_edit_reminder"
+        tools:layout="@layout/fragment_edit_reminder" >
+        <action
+            android:id="@+id/action_editReminderFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="currentUser"
+            app:argType="com.example.remindr.database.Reminder" />
+        <action
+            android:id="@+id/action_editReminderFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+        <argument
+            android:name="location_x"
+            app:argType="string" />
+        <argument
+            android:name="location_y"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.example.remindr.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" >
+        <action
+            android:id="@+id/action_mapsFragment_to_fullReminderFragment"
+            app:destination="@id/fullReminderFragment" />
+        <action
+            android:id="@+id/action_mapsFragment_to_editReminderFragment"
+            app:destination="@id/editReminderFragment" />
+        <argument
+            android:name="previous_location"
+            app:argType="string" />
+        <argument
+            android:name="location_x"
+            app:argType="string" />
+        <argument
+            android:name="location_y"
+            app:argType="string" />
     </fragment>
 </navigation>

@@ -44,6 +44,9 @@ class LoginFragment : Fragment(), View.OnClickListener {
         when (v!!.id) {
             R.id.register_btn_in_login -> navController!!.navigate(R.id.action_loginFragment_to_registerFragment)
             R.id.login_btn -> {
+                navController!!.navigate(R.id.action_loginFragment_to_homeFragment)
+
+                /*
                 when {
                     TextUtils.isEmpty(et_password_login.text.toString().trim {it <= ' '}) -> {
                         Toast.makeText(context, "Please enter password", Toast.LENGTH_SHORT).show()
@@ -72,6 +75,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                                 )
                     }
                 }
+                */
             }
         }
     }

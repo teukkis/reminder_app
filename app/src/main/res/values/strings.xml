@@ -10,4 +10,6 @@
     <string name="login_large_icon">login_large_icon</string>
     <string name="register_large_icon">register_large_icon</string>
     <string name="don_t_have_an_account">Do not have an account yet?</string>
+    <string name="dropped_pin">dropped_pin</string>
+    <string name="add_coordinates">add coordinates</string>
 </resources>

@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FullReminderFragment">
+
+
+    <ImageView
+        android:id="@+id/image_new_reminder"
+        android:layout_width="406dp"
+        android:layout_height="269dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:src="@android:drawable/btn_star_big_on"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_message_new_reminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Title..."
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/layout_day_new_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_new_reminder" />
+
+    <LinearLayout
+        android:id="@+id/layout_day_new_reminder"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/layout_time_new_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_message_new_reminder">
+
+        <ImageView
+            android:id="@+id/calendar_icon_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0"
+            android:src="@drawable/ic_baseline_calendar_today_24" />
+
+        <TextView
+            android:id="@+id/tv_date_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Date"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_day_chosen_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textAlignment="viewEnd"
+            android:textSize="18sp"
+            tools:text="@tools:sample/date/ddmmyy" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_time_new_reminder"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/layout_location_new_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_day_new_reminder">
+
+        <ImageView
+            android:id="@+id/time_icon_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0"
+            android:src="@drawable/ic_baseline_calendar_today_24" />
+
+        <TextView
+            android:id="@+id/tv_time_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Time"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_time_chosen_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textAlignment="viewEnd"
+            android:textSize="18sp"
+            tools:text="@tools:sample/date/hhmm" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_location_new_reminder"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/layout_image_new_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_time_new_reminder">
+
+        <ImageView
+            android:id="@+id/location_icon_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0"
+            android:src="@drawable/ic_baseline_calendar_today_24" />
+
+        <TextView
+            android:id="@+id/tv_location_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Location"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_location_chosen_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:hint="Not defined"
+            android:textAlignment="viewEnd"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_image_new_reminder"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="32dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/create_button_new_reminder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_location_new_reminder">
+
+        <ImageView
+            android:id="@+id/image_icon_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_weight="0"
+            android:src="@drawable/ic_baseline_calendar_today_24" />
+
+        <TextView
+            android:id="@+id/tv_image_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:text="Image"
+            android:textAlignment="textStart"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_image_chose_new_reminder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:paddingStart="8dp"
+            android:paddingEnd="8dp"
+            android:textAlignment="viewEnd"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/create_button_new_reminder"
+        android:layout_width="255dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="63dp"
+        android:background="@drawable/app_buttons_background"
+        android:text="Create"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout_image_new_reminder" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
