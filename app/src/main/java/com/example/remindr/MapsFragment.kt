@@ -81,19 +81,19 @@ class MapsFragment : Fragment() {
             if (previousLocation == "edit") {
                 clickedReminder = arguments?.getParcelable("reminder")!!
 
-                var bundle = bundleOf(
+                val bundle = bundleOf(
                         "location_x" to latitude,
                         "location_y" to longitude,
                         "reminder" to clickedReminder
                 )
-                navController!!.navigate(R.id.action_mapsFragment_to_editReminderFragment, bundle)
+                navController.navigate(R.id.action_mapsFragment_to_editReminderFragment, bundle)
 
             } else {
-                var bundle = bundleOf(
+                val bundle = bundleOf(
                         "location_x" to latitude,
                         "location_y" to longitude
                 )
-                navController!!.navigate(R.id.action_mapsFragment_to_fullReminderFragment, bundle)
+                navController.navigate(R.id.action_mapsFragment_to_fullReminderFragment, bundle)
             }
 
 

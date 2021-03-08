@@ -53,7 +53,13 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
         reminderViewModel = ViewModelProvider(this).get(ReminderViewModel::class.java)
         reminderViewModel.allReminders.observe(viewLifecycleOwner, Observer { reminder ->
-            reminderAdapter.submitList(reminder)
+
+            val filteredList = reminder.filter {
+                it.reminder_seen
+            }
+            println(filteredList)
+            println(reminder)
+            reminderAdapter.submitList(filteredList)
 
         })
 
@@ -61,12 +67,12 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-            R.id.logout -> navController!!.navigate(R.id.action_homeFragment_to_loginFragment)
-            R.id.profile -> navController!!.navigate(R.id.action_homeFragment_to_profileFragment)
+            R.id.logout -> navController.navigate(R.id.action_homeFragment_to_loginFragment)
+            R.id.profile -> navController.navigate(R.id.action_homeFragment_to_profileFragment)
             R.id.addNewReminderFloatingButton -> {
                 addNewReminderFloatingButton.startAnimation(rotateOpen)
                 addNewReminderFloatingButton.startAnimation(rotateClose)
-                navController!!.navigate(R.id.action_homeFragment_to_fullReminderFragment)
+                navController.navigate(R.id.action_homeFragment_to_fullReminderFragment)
             }
         }
     }

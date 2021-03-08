@@ -151,7 +151,7 @@ class EditReminderFragment : Fragment(), View.OnClickListener, DatePickerDialog.
 
             R.id.layout_location_edit_reminder -> {
                 val bundle = bundleOf("previous_location" to  "edit", "reminder" to clickedReminder)
-                navController!!.navigate(R.id.action_editReminderFragment_to_mapsFragment, bundle)
+                navController.navigate(R.id.action_editReminderFragment_to_mapsFragment, bundle)
 
             }
 
@@ -218,7 +218,7 @@ class EditReminderFragment : Fragment(), View.OnClickListener, DatePickerDialog.
         val date = tv_date_chosen_edit_reminder.text.toString()
 
         lifecycleScope.launch {
-            val reminder = Reminder(clickedReminder.id, title, coordinateX, coordinateY, date, time, "null", "0", getBitmap())
+            val reminder = Reminder(clickedReminder.id, title, coordinateX, coordinateY, date, time, "null", false, getBitmap())
             println(reminder)
             reminderViewModel.updateReminder(reminder)
         }

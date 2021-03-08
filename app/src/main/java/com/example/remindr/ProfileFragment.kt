@@ -44,9 +44,6 @@ class ProfileFragment : Fragment(), View.OnClickListener {
             // Name, email address, and profile photo Url
             val email = user.email
 
-            // Check if user's email is verified
-            val emailVerified = user.isEmailVerified
-
             view.findViewById<EditText>(R.id.et_email_profile).setText(email)
         }
 

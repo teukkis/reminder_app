@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="64dp">
+
+
+    <TextView
+        android:id="@+id/small_notification_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="nothing so far, title..."
+        style="@style/TextAppearance.Compat.Notification.Title" />
+
+    <TextView
+        android:id="@+id/small_notification_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="nothing so far"
+        style="@style/TextAppearance.Compat.Notification.Info" />
+
+
+</LinearLayout>

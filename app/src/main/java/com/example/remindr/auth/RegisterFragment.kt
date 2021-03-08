@@ -43,7 +43,7 @@ class RegisterFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-            R.id.login_btn_in_register -> navController!!.navigate(R.id.action_registerFragment_to_loginFragment)
+            R.id.login_btn_in_register -> navController.navigate(R.id.action_registerFragment_to_loginFragment)
             R.id.register_btn -> {
                 when {
                     TextUtils.isEmpty(et_password_register.text.toString().trim {it <= ' '}) -> {
@@ -63,9 +63,9 @@ class RegisterFragment : Fragment(), View.OnClickListener {
                             .addOnCompleteListener(
                                 OnCompleteListener<AuthResult> { task ->
                                     if (task.isSuccessful) {
-                                        val firebaseUser: FirebaseUser = task.result!!.user!!
+                                        task.result!!.user!!
                                         Toast.makeText( context, "All good", Toast.LENGTH_SHORT).show()
-                                        navController!!.navigate(R.id.action_registerFragment_to_loginFragment)
+                                        navController.navigate(R.id.action_registerFragment_to_loginFragment)
                                     }
                                     else {
                                         Toast.makeText(context, task.exception!!.message.toString(), Toast.LENGTH_LONG).show()
