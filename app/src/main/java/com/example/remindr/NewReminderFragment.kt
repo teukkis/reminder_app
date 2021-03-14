@@ -93,11 +93,19 @@ class FullReminderFragment : Fragment(), View.OnClickListener, DatePickerDialog.
         // Arguments from google maps
         coordinateX = arguments?.getString("location_x").toString()
         coordinateY = arguments?.getString("location_y").toString()
+        val check = arguments?.getString("check").toString()
 
+        if (check.startsWith('L')) {
+
+            tv_location_chosen_new_reminder.text = "$coordinateX, $coordinateY"
+
+        }
+
+
+        println(coordinateX)
         // Initialize input fields
         //tv_day_chosen_new_reminder.text = "$day.$month,$year"
         //tv_time_chosen_new_reminder.text = "$hour:$minute"
-        //tv_location_chosen_new_reminder.text = "$coordinateX, $coordinateY"
 
         getDateTimeCalendar()
     }
@@ -120,7 +128,7 @@ class FullReminderFragment : Fragment(), View.OnClickListener, DatePickerDialog.
             // Open up Google Maps
             R.id.layout_location_new_reminder -> {
                 val bundle = bundleOf("previous_location" to "new")
-                navController.navigate(R.id.action_fullReminderFragment_to_mapsFragment, bundle)
+                navController.navigate(R.id.action_fullReminderFragment_to_mapsActivity, bundle)
 
             }
 
@@ -241,9 +249,6 @@ class FullReminderFragment : Fragment(), View.OnClickListener, DatePickerDialog.
     }
 
 
-    // CODE FOR PICKING IMAGE FROM THE GALLERY
-    // TODO TooLargeException is probably caused by this code ( Intent )
-
     private fun chooseImageGallery() {
         val intent = Intent(Intent.ACTION_PICK)
         intent.type = "image/*"
@@ -290,7 +295,7 @@ class FullReminderFragment : Fragment(), View.OnClickListener, DatePickerDialog.
     companion object {
         private const val IMAGE_PICK_CODE = 1000
         private const val PERMISSION_CODE = 1001
-        private const val CHANNEL_ID = "REMINDR_APPLICATION_NOTIFICATION_CHANNEL"
+        const val CHANNEL_ID = "REMINDR_APPLICATION_NOTIFICATION_CHANNEL"
         private const val notificationId = 101
 
 

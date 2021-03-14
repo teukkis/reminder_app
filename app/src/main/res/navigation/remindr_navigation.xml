@@ -92,6 +92,9 @@
         <argument
             android:name="latlng"
             app:argType="string" />
+        <action
+            android:id="@+id/action_fullReminderFragment_to_mapsActivity"
+            app:destination="@id/mapsActivity" />
     </fragment>
     <fragment
         android:id="@+id/editReminderFragment"
@@ -135,4 +138,16 @@
             android:name="location_y"
             app:argType="string" />
     </fragment>
+    <activity
+        android:id="@+id/mapsActivity"
+        android:name="com.example.remindr.MapsActivity"
+        android:label="activity_maps"
+        tools:layout="@layout/activity_maps" >
+        <argument
+            android:name="time"
+            app:argType="string" />
+        <argument
+            android:name="date"
+            app:argType="string" />
+    </activity>
 </navigation>

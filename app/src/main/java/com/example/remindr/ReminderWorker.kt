@@ -10,9 +10,6 @@ import com.example.remindr.database.ReminderViewModel
 
 class ReminderWorker(context: Context, params: WorkerParameters) : Worker(context, params) {
 
-
-
-
     override fun doWork(): Result {
 
         val reminderId = inputData.getString("generatedId")?.toInt()
